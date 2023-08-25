@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_study_twitter/verify_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -9,6 +10,11 @@ class SignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void _TapSingUp() {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => VerifyScreen()));
+    }
+
     return SafeArea(
       child: GestureDetector(
         child: Scaffold(
@@ -135,13 +141,13 @@ class SignUpScreen extends StatelessWidget {
                     CupertinoButton(
                         borderRadius: BorderRadius.circular(25),
                         color: Colors.blue,
+                        onPressed: _TapSingUp,
                         child: const Text(
                           "         Sign up        ",
                           style: TextStyle(
                             color: Colors.white,
                           ),
-                        ),
-                        onPressed: () {})
+                        ))
                   ],
                 ),
               ),
